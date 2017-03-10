@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: #1c231c;
+}
+
+h1, h2, h3 {
+  font-family: 'PT Mono', monospace;
+}
+
+p {
+  line-height: 1.4;
+  margin: 0 0 15px;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 40px 0;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin: 40px 0 30px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 30px 0 15px;
+  font-weight: bold;
+}
+
+.ImageBlock {
+  height: 100vh;
+  width: 50%;
+  background-color: #5b7663;
+  background-image: url(../img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+}
+
+.ImageBlock:after {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.2;
+  transition: opacity ease-in-out .2s;
+}
+
+/*.ImageBlock:hover:after {*/
+  /*opacity: 0.2;*/
+/*}*/
+
+.ImageBlock-TextContainer {
+  position: absolute;
+  width: 50%;
+  padding: 80px;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+}
+
+.ImageBlock-Title {
+  margin: 30px 0;
+}
+
+.ImageBlock-Subtitle {
+  display: block;
+  margin: 30px 0 0;
+  font-weight: normal;
+  font-size: 0.6em;
+}
+
+.ImageBlock-Social a {
+  display: inline-block;
+  font-size: 1.2em;
+  margin: 0 10px;
+}
+
+.TextBlock {
+  background: #FFFFFF;
+  padding: 80px;
+  max-width: 800px;
+  margin-left: 50%;
+}
+
+.TextBlock-Section {
+  margin-top: 40px;
+}
+
+.TextBlock-Section:first-of-type,
+.TextBlock-Section:first-of-type h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.TextBlock-Section:last-of-type,
+.TextBlock-Section:last-of-type p {
+  margin-bottom: 0;
+}
+
+.TextBlock h2 {
+  position: relative;
+}
+
+.TextBlock h2:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -24px;
+  height: 8px;
+  width: 8px;
+  border-radius: 8px;
+  background: #62795f;
+}
+
+.TextBlock-SectionLink {
+  transition: opacity ease-in-out .2s;
+  opacity: 0.3;
+}
+
+.TextBlock-SectionLink:hover {
+  opacity: 0.6;
+}
+
+.TextBlock-SectionSubtitle {
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 768px) {
+  .ImageBlock {
+    height: 100vh;
+    width: 100%;
+    position: static;
+  }
+
+  .ImageBlock-TextContainer {
+    padding: 40px;
+  }
+
+
+  .TextBlock {
+    width: 100%;
+    margin-left: 0;
+    max-width: 100%;
+    padding: 40px;
+  }
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
